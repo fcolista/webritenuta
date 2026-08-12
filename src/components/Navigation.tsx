@@ -1,6 +1,6 @@
 import React from 'react';
 import type { ViewMode } from '../types';
-import { getFullVersionString } from '../utils/version';
+import { getFullVersionString, APP_AUTHOR } from '../utils/version';
 import { 
   LayoutDashboard, 
   FilePlus, 
@@ -88,10 +88,20 @@ export const Navigation: React.FC<NavigationProps> = ({
           })}
         </nav>
 
-        <div className="p-4 border-t border-slate-100 bg-slate-50/50">
+        <div className="p-4 border-t border-slate-100 bg-slate-50/50 space-y-2.5">
           <div className="flex items-center gap-2 text-xs font-semibold text-slate-500">
-            <FileText size={16} className="w-4 h-4 text-blue-600" />
+            <FileText size={15} className="w-4 h-4 text-blue-600 shrink-0" />
             <span>Versione {getFullVersionString()}</span>
+          </div>
+
+          <div className="flex items-center gap-2.5 p-2.5 bg-white rounded-xl border border-slate-200 shadow-2xs">
+            <div className="w-7 h-7 rounded-lg bg-blue-600 text-white flex items-center justify-center text-xs font-bold shrink-0 shadow-2xs">
+              FC
+            </div>
+            <div className="overflow-hidden">
+              <p className="text-[10px] text-slate-400 font-semibold uppercase tracking-wider leading-none">Autore</p>
+              <p className="text-xs font-bold text-slate-800 truncate leading-tight mt-0.5">{APP_AUTHOR}</p>
+            </div>
           </div>
         </div>
       </aside>
