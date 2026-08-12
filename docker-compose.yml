@@ -1,0 +1,11 @@
+services:
+  webritenuta:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: webritenuta-app
+    restart: unless-stopped
+    ports:
+      - "${PORT:-8080}:80"
+    environment:
+      - NODE_ENV=production
